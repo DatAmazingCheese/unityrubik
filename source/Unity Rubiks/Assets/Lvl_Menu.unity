@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 652098607}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -820,7 +820,6 @@ GameObject:
   - component: {fileID: 2125033157}
   - component: {fileID: 2125033156}
   - component: {fileID: 2125033155}
-  - component: {fileID: 2125033154}
   m_Layer: 0
   m_Name: Rubik Bone
   m_TagString: Untagged
@@ -828,18 +827,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2125033154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2125033153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f9f198c1b3551649872cad3e1e0d1a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotateAngle: 90
 --- !u!23 &2125033155
 MeshRenderer:
   m_ObjectHideFlags: 0

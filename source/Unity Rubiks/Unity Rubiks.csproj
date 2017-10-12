@@ -80,7 +80,6 @@
   <ItemGroup>
     <Compile Include="Assets\FlyCamera.cs" />
     <Compile Include="Assets\MenuButtonManager.cs" />
-    <Compile Include="Assets\RubikControl.cs" />
     <Compile Include="Assets\RubikSideTurn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

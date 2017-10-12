@@ -1,9 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RubikSideTurn : MonoBehaviour
 {
-    public float RotateAngle = 90f;
+    public string Side = "1";
 
     IEnumerator RotateAround(Vector3 axis, float angle, float duration)
     {
@@ -24,9 +25,16 @@ public class RubikSideTurn : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(Side))
         {
-            StartCoroutine(RotateAround(Vector3.up, RotateAngle, 1.0f));
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                StartCoroutine(RotateAround(Vector3.up, -90, 0.7f));
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                StartCoroutine(RotateAround(Vector3.up, 90, 0.7f));
+            }
         }
     }
 }
