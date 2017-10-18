@@ -5,6 +5,7 @@ using UnityEngine;
 public class RubikSideTurn : MonoBehaviour
 {
     public string Side = "1";
+    public Vector3 Direction = Vector3.up;
 
     IEnumerator RotateAround(Vector3 axis, float angle, float duration)
     {
@@ -29,11 +30,11 @@ public class RubikSideTurn : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                StartCoroutine(RotateAround(Vector3.up, -90, 0.7f));
+                StartCoroutine(RotateAround(Direction, -90, 0.7f));
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                StartCoroutine(RotateAround(Vector3.up, 90, 0.7f));
+                StartCoroutine(RotateAround(Direction, 90, 0.7f));
             }
         }
     }
