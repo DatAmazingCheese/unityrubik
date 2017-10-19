@@ -78,9 +78,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FlyCamera.cs" />
+    <Compile Include="Assets\CAM_CameraOrbit.cs" />
+    <Compile Include="Assets\GAME_RubikSideTurn.cs" />
     <Compile Include="Assets\MenuButtonManager.cs" />
-    <Compile Include="Assets\RubikSideTurn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RubikSideTurn : MonoBehaviour
+public class GAME_RubikSideTurn : MonoBehaviour
 {
     public string Side = "1";
     public Vector3 Direction = Vector3.up;
