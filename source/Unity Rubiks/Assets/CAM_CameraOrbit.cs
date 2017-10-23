@@ -5,6 +5,8 @@ using UnityEngine;
 public class CAM_CameraOrbit : MonoBehaviour
 {
     public float RotateAmount = 15f;
+    public Transform TargetObject;
+
     void LateUpdate()
     {
         OrbitCamera();
@@ -12,10 +14,9 @@ public class CAM_CameraOrbit : MonoBehaviour
 
     public void OrbitCamera()
     {
-        bool isCtrlKeyDown = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
-        if (isCtrlKeyDown && Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
-            Vector3 target = Vector3.zero; //this is the center of the scene, you can use any point here
+            Vector3 target = TargetObject.position; //this is the center of the scene, you can use any point here
             float y_rotate = Input.GetAxis("Mouse X") * RotateAmount;
             float x_rotate = Input.GetAxis("Mouse Y") * RotateAmount;
             OrbitCamera(target, y_rotate, x_rotate);
@@ -27,8 +28,8 @@ public class CAM_CameraOrbit : MonoBehaviour
         Vector3 angles = transform.eulerAngles;
         angles.z = 0;
         transform.eulerAngles = angles;
-        transform.RotateAround(target, Vector3.up, y_rotate);
-        transform.RotateAround(target, Vector3.left, x_rotate);
+        transform.RotateAround(target, Vector3.down, y_rotate);
+        transform.RotateAround(target, Vector3.right, x_rotate);
 
         transform.LookAt(target);
     }
