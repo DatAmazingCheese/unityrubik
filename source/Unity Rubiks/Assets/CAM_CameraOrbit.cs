@@ -1,37 +1,69 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
+[AddComponentMenu("Camera-Control/Mouse-Orbit")]
 public class CAM_CameraOrbit : MonoBehaviour
 {
-    public float RotateAmount = 15f;
-    public Transform TargetObject;
+    public Transform target;
+    public float distance = 5.0f;
+    public float xSpeed = 120.0f;
+    public float ySpeed = 120.0f;
 
-    void LateUpdate()
-    {
-        OrbitCamera();
-    }
+    public float yMinLimit = -20f;
+    public float yMaxLimit = 80f;
 
-    public void OrbitCamera()
+    public float distanceMin = .5f;
+    public float distanceMax = 15f;
+
+    private Rigidbody rigidbody;
+
+    float x = 0.0f;
+    float y = 0.0f;
+
+    void Start()
     {
-        if (Input.GetMouseButton(0))
+        Cursor.visible = false;
+
+        Vector3 angles = transform.eulerAngles;
+        x = angles.y;
+        y = angles.x;
+
+        rigidbody = GetComponent<Rigidbody>();
+
+        // Make the rigid body not change rotation
+        if (rigidbody != null)
         {
-            Vector3 target = TargetObject.position; //this is the center of the scene, you can use any point here
-            float y_rotate = Input.GetAxis("Mouse X") * RotateAmount;
-            float x_rotate = Input.GetAxis("Mouse Y") * RotateAmount;
-            OrbitCamera(target, y_rotate, x_rotate);
+            rigidbody.freezeRotation = true;
         }
     }
 
-    public void OrbitCamera(Vector3 target, float y_rotate, float x_rotate)
+    void LateUpdate()
     {
-        Vector3 angles = transform.eulerAngles;
-        angles.z = 0;
-        transform.eulerAngles = angles;
-        transform.RotateAround(target, Vector3.down, y_rotate);
-        transform.RotateAround(target, Vector3.right, x_rotate);
+        if (target)
+        {
+            x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
+            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
 
-        transform.LookAt(target);
+            y = ClampAngle(y, yMinLimit, yMaxLimit);
+
+            Quaternion rotation = Quaternion.Euler(y, x, 0);
+
+            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
+
+            Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
+            Vector3 position = rotation * negDistance + target.position;
+
+            transform.rotation = rotation;
+            transform.position = position;
+        }
+    }
+
+    public static float ClampAngle(float angle, float min, float max)
+    {
+        if (angle < -360F)
+            angle += 360F;
+        if (angle > 360F)
+            angle -= 360F;
+        return Mathf.Clamp(angle, min, max);
     }
 }
-
