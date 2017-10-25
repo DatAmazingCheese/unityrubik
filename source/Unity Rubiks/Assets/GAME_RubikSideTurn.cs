@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class GAME_RubikSideTurn : MonoBehaviour
 {
-    public string Side = "1";
-    public Vector3 Direction = Vector3.up;
-    public Vector3 FindBoxScale = new Vector3(1.5f, 1.5f, 0.5f);
-    public Collider[] AdjacentCubies;
-    public GameObject RubikOrigin;
+    public int Side = 1; // what side is the center
+    public Vector3 Direction = Vector3.up; // direction for rotation
+    public GameObject RubikOrigin; // rubik cube origin object
 
-    bool Completed = true;
-    bool ParentDone = false;
+    public Vector3 FindBoxScale = new Vector3(1.5f, 1.5f, 0.5f); // half-ent scale for box cast
+    public Collider[] AdjacentCubies; // list of adjacent cubies found in box cast
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(3, 3, 1));
-    }
+    List<int> OtherSides = new List<int>() { 1, 2, 3, 4, 5, 6 }; // list of the other sides of a cube
+
+    bool Completed = true; // rotation completion
+    bool ParentDone = false; // parent completion 
 
     IEnumerator RotateAround(Vector3 axis, float angle, float duration)
     {
@@ -43,13 +40,13 @@ public class GAME_RubikSideTurn : MonoBehaviour
 
     void SetParent()
     {
-        Collider[] AdjacentCubies = Physics.OverlapBox(transform.position, FindBoxScale, Quaternion.identity, 1 << 8);
+        Collider[] AdjacentCubies = Physics.OverlapBox(transform.position, FindBoxScale, Quaternion.identity, 1 << 8); // find adjacent cubies next to center
 
-        int Count = 0;
+        int Count = 0; // reset count
 
         if (AdjacentCubies != null)
         {
-            foreach (Collider Cubie in AdjacentCubies)
+            foreach (Collider Cubie in AdjacentCubies) // for each cubie in the list, parent to the center
             {
                 Cubie.gameObject.transform.parent = transform;
                 Count++;
@@ -65,7 +62,7 @@ public class GAME_RubikSideTurn : MonoBehaviour
     {
         if (AdjacentCubies != null)
         {
-            foreach (Collider Cubie in AdjacentCubies)
+            foreach (Collider Cubie in AdjacentCubies) // for each cubie in the list, parent to the rubik origin
             {
                 Cubie.gameObject.transform.parent = RubikOrigin.transform;
             }
@@ -74,14 +71,21 @@ public class GAME_RubikSideTurn : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(Side))
+        switch (Side)
         {
-            AdjacentCubies = null;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+        if (Input.GetKeyDown(Side.ToString()) & !Input.GetKeyDown(Side.ToString()) & !Input.GetKeyDown(Side.ToString()) & !Input.GetKeyDown(Side.ToString()) & !Input.GetKeyDown(Side.ToString()) & !Input.GetKeyDown(Side.ToString()))
+        {
+            AdjacentCubies = null; // reset list for new box cast
             SetParent();
         }
-        if (Input.GetKey(Side))
+        if (Input.GetKey(Side.ToString()))
         {
-            if (ParentDone)
+            if (ParentDone) // rotation for the center
             {
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {

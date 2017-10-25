@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 917, y: 421}
-  m_MaxSize: {x: 22012, y: 10021}
+  m_MinSize: {x: 913, y: 442}
+  m_MaxSize: {x: 22008, y: 10000}
   vertical: 0
-  controlID: 28711
+  controlID: 597
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 0
     width: 908
     height: 947
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 28712
+  controlID: 598
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,9 +183,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.3128076, y: 3.7125583, z: 1.8681202}
+    m_Target: {x: 2.5614622, y: 6.140403, z: 2.293773}
     speed: 2
-    m_Value: {x: -3.3128076, y: 3.7125583, z: 1.8681202}
+    m_Value: {x: 2.5614622, y: 6.140403, z: 2.293773}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -208,9 +208,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.34756917, y: -0.21096492, z: 0.080571376, w: -0.91005373}
+    m_Target: {x: 0.04115719, y: 0.93393135, z: -0.11434213, w: 0.3361611}
     speed: 2
-    m_Value: {x: -0.34756917, y: -0.21096492, z: 0.080571376, w: -0.91005373}
+    m_Value: {x: 0.04115719, y: 0.93393135, z: -0.11434214, w: 0.3361611}
   m_Size:
     m_Target: 7.236469
     speed: 2
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 486
     width: 908
     height: 461
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -303,9 +303,9 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 20280000
-    m_LastClickedID: 10272
-    m_ExpandedIDs: 38f9ffff0000000062270000a2270000ae270000ce270000
+    m_SelectedIDs: 20070000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 38f9ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\DatAmazingCheese\Documents\Unity Projects\unityrubik\source\Unity
+  m_LastProjectPath: C:\Users\rhicks.50\Desktop\Unity Rubik Git\unityrubik\source\Unity
     Rubiks
   m_IsLocked: 0
   m_FolderTreeState:
@@ -457,8 +457,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 20280000
-    m_LastClickedInstanceID: 10272
+    m_SelectedInstanceIDs: 20070000
+    m_LastClickedInstanceID: 1824
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
