@@ -6,6 +6,9 @@ public class GAME_RubikSideTurn : MonoBehaviour
 {
     public string Side = "1";
     public Vector3 Direction = Vector3.up;
+    public GameObject[] AdjacentCubies;
+    public bool Completed = true;
+    public bool ParentDone = false;
 
     IEnumerator RotateAround(Vector3 axis, float angle, float duration)
     {
@@ -19,23 +22,61 @@ public class GAME_RubikSideTurn : MonoBehaviour
             elasped += Time.deltaTime;
             rotated += step;
             yield return null;
-        }
 
+            Completed = false;
+        }
+        if (elasped == duration)
+        {
+            Completed = true;
+        }
         transform.RotateAround(transform.position, axis, angle - rotated);
+    }
+
+    void SetParent()
+    {
+        int Count = 0;
+        foreach (GameObject Cubie in AdjacentCubies)
+        {
+            Cubie.transform.parent = transform;
+            Count++;
+        }
+        if (Count >= 8)
+        {
+            ParentDone = true;
+        }
+    }
+
+    void RemoveParent()
+    {
+        foreach (GameObject Cubie in AdjacentCubies)
+        {
+            Cubie.transform.parent = null;
+        }
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(Side))
+        {
+            SetParent();
+        }
         if (Input.GetKey(Side))
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (ParentDone)
             {
-                StartCoroutine(RotateAround(Direction, -90, 0.7f));
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    StartCoroutine(RotateAround(Direction, -90, 0.7f));
+                }
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    StartCoroutine(RotateAround(Direction, 90, 0.7f));
+                }
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                StartCoroutine(RotateAround(Direction, 90, 0.7f));
-            }
+        }
+        if (Completed)
+        {
+            RemoveParent();
         }
     }
 }
