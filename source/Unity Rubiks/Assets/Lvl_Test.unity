@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 209658092}
   - component: {fileID: 209658091}
   - component: {fileID: 209658090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Orange Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 273645371}
   - component: {fileID: 273645370}
   - component: {fileID: 273645369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 484792096}
   - component: {fileID: 484792095}
   - component: {fileID: 484792094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Green Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 521424850}
   - component: {fileID: 521424849}
   - component: {fileID: 521424848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Green Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 556926671}
   - component: {fileID: 556926670}
   - component: {fileID: 556926669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Red Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 570044833}
   - component: {fileID: 570044832}
   - component: {fileID: 570044831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 605601877}
   - component: {fileID: 605601876}
   - component: {fileID: 605601875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 648320921}
   - component: {fileID: 648320920}
   - component: {fileID: 648320919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,17 +834,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 6
   Direction: {x: 0, y: 0, z: -1}
-  AdjacentCubies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Completed: 0
-  ParentDone: 0
+  FindBoxScale: {x: 1.5, y: 1.5, z: 0.5}
+  AdjacentCubies: []
+  RubikOrigin: {fileID: 1106017521}
 --- !u!23 &701409942
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -944,9 +936,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 1
   Direction: {x: 0, y: 1, z: 0}
+  FindBoxScale: {x: 1.5, y: 0.5, z: 1.5}
   AdjacentCubies: []
-  Completed: 1
-  ParentDone: 0
+  RubikOrigin: {fileID: 1106017521}
 --- !u!23 &726964227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1012,7 +1004,7 @@ GameObject:
   - component: {fileID: 785562788}
   - component: {fileID: 785562787}
   - component: {fileID: 785562786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1089,7 @@ GameObject:
   - component: {fileID: 785828411}
   - component: {fileID: 785828410}
   - component: {fileID: 785828409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Orange Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1174,7 @@ GameObject:
   - component: {fileID: 818187326}
   - component: {fileID: 818187325}
   - component: {fileID: 818187324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1259,7 @@ GameObject:
   - component: {fileID: 840268331}
   - component: {fileID: 840268330}
   - component: {fileID: 840268329}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1274,7 @@ Transform:
   m_GameObject: {fileID: 840268327}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 1.05, y: 1.05, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1, z: 0.99999976}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1106017526}
   m_RootOrder: 6
@@ -1386,9 +1378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 3
   Direction: {x: 0, y: 1, z: 0}
+  FindBoxScale: {x: 1.5, y: 0.5, z: 1.5}
   AdjacentCubies: []
-  Completed: 1
-  ParentDone: 0
+  RubikOrigin: {fileID: 1106017521}
 --- !u!23 &847846162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1488,17 +1480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 2
   Direction: {x: 1, y: 0, z: 0}
-  AdjacentCubies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Completed: 1
-  ParentDone: 0
+  FindBoxScale: {x: 0.5, y: 1.5, z: 1.5}
+  AdjacentCubies: []
+  RubikOrigin: {fileID: 1106017521}
 --- !u!23 &848918993
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1564,7 +1548,7 @@ GameObject:
   - component: {fileID: 911040304}
   - component: {fileID: 911040303}
   - component: {fileID: 911040302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Blue Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1633,7 @@ GameObject:
   - component: {fileID: 962772483}
   - component: {fileID: 962772482}
   - component: {fileID: 962772481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Green Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,9 +1860,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 5
   Direction: {x: 0, y: 0, z: -1}
+  FindBoxScale: {x: 1.5, y: 1.5, z: 0.5}
   AdjacentCubies: []
-  Completed: 1
-  ParentDone: 0
+  RubikOrigin: {fileID: 1106017521}
 --- !u!23 &1108591396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1944,7 +1928,7 @@ GameObject:
   - component: {fileID: 1137331375}
   - component: {fileID: 1137331374}
   - component: {fileID: 1137331373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Red Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2138,7 +2122,7 @@ GameObject:
   - component: {fileID: 1201986672}
   - component: {fileID: 1201986671}
   - component: {fileID: 1201986670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,7 +2207,7 @@ GameObject:
   - component: {fileID: 1532998134}
   - component: {fileID: 1532998133}
   - component: {fileID: 1532998132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2308,7 +2292,7 @@ GameObject:
   - component: {fileID: 1834605243}
   - component: {fileID: 1834605242}
   - component: {fileID: 1834605241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Blue Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2472,13 +2456,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860164788}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1106017526}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1860164790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,17 +2476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 4
   Direction: {x: 1, y: 0, z: 0}
-  AdjacentCubies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Completed: 1
-  ParentDone: 0
+  FindBoxScale: {x: 0.5, y: 1.5, z: 1.5}
+  AdjacentCubies: []
+  RubikOrigin: {fileID: 1106017521}
 --- !u!23 &1860164791
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2652,7 +2628,7 @@ GameObject:
   - component: {fileID: 2020627536}
   - component: {fileID: 2020627535}
   - component: {fileID: 2020627534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: White Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2737,7 +2713,7 @@ GameObject:
   - component: {fileID: 2083848059}
   - component: {fileID: 2083848058}
   - component: {fileID: 2083848057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Yellow Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

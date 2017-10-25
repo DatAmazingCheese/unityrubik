@@ -6,9 +6,18 @@ public class GAME_RubikSideTurn : MonoBehaviour
 {
     public string Side = "1";
     public Vector3 Direction = Vector3.up;
-    public GameObject[] AdjacentCubies;
-    public bool Completed = true;
-    public bool ParentDone = false;
+    public Vector3 FindBoxScale = new Vector3(1.5f, 1.5f, 0.5f);
+    public Collider[] AdjacentCubies;
+    public GameObject RubikOrigin;
+
+    bool Completed = true;
+    bool ParentDone = false;
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector3(3, 3, 1));
+    }
 
     IEnumerator RotateAround(Vector3 axis, float angle, float duration)
     {
@@ -34,23 +43,32 @@ public class GAME_RubikSideTurn : MonoBehaviour
 
     void SetParent()
     {
+        Collider[] AdjacentCubies = Physics.OverlapBox(transform.position, FindBoxScale, Quaternion.identity, 1 << 8);
+
         int Count = 0;
-        foreach (GameObject Cubie in AdjacentCubies)
+
+        if (AdjacentCubies != null)
         {
-            Cubie.transform.parent = transform;
-            Count++;
-        }
-        if (Count >= 8)
-        {
-            ParentDone = true;
+            foreach (Collider Cubie in AdjacentCubies)
+            {
+                Cubie.gameObject.transform.parent = transform;
+                Count++;
+            }
+            if (Count >= 8)
+            {
+                ParentDone = true;
+            }
         }
     }
-
+   
     void RemoveParent()
     {
-        foreach (GameObject Cubie in AdjacentCubies)
+        if (AdjacentCubies != null)
         {
-            Cubie.transform.parent = null;
+            foreach (Collider Cubie in AdjacentCubies)
+            {
+                Cubie.gameObject.transform.parent = RubikOrigin.transform;
+            }
         }
     }
 
@@ -58,6 +76,7 @@ public class GAME_RubikSideTurn : MonoBehaviour
     {
         if (Input.GetKeyDown(Side))
         {
+            AdjacentCubies = null;
             SetParent();
         }
         if (Input.GetKey(Side))
