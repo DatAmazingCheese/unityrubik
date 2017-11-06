@@ -72,4 +72,9 @@ public class GAME_RubikSideTurn : MonoBehaviour
     {
         StartCoroutine(RotateAround(center, axis, angle, 1f));
     }
+
+    void Update()
+    {
+        SetParent(new Vector3 (1f, 2f, 3f));
+    }
 }
