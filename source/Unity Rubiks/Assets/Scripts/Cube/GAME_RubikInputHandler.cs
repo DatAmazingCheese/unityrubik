@@ -7,6 +7,10 @@ public class GAME_RubikInputHandler : MonoBehaviour
     public List<GameObject> Centers;
     public GAME_RubikSideTurn TurnHandler;
 
+    //bool One = Input.GetKey("space");
+
+    List<int> Inputs = new List<int>() { 1, 2, 3, 4, 5, 6 }; 
+
 	void Start ()
     {
        
@@ -25,6 +29,19 @@ public class GAME_RubikInputHandler : MonoBehaviour
         //else
         //unparent cubies
         //wait for input
+
+        // input testing
+        if (!Output)
+        {
+            var InputIndex = 0;
+            for (int i = 1; i < Inputs.Count; i++)
+            {
+                if ()
+                {
+
+                }
+            }
+        }
     }
 }
 
