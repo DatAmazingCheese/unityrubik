@@ -9,7 +9,7 @@ public class GAME_RubikInputHandler : MonoBehaviour
 
     //bool One = Input.GetKey("space");
 
-    List<int> Inputs = new List<int>() { 1, 2, 3, 4, 5, 6 }; 
+    List<bool> Inputs = new List<bool>() { false, false, false, false, false, false}; 
 
 	void Start ()
     {
@@ -20,7 +20,7 @@ public class GAME_RubikInputHandler : MonoBehaviour
     {
         //psuedo code begins here, beware weary traveller
 
-        //side = 1 of 6 inputs, only 1 of 6.Never 2
+        //side = 1 of 6 inputs, only 1 of 6. Never 2
         //if side
         //parent the cubies to that sides center
         //when mouse 1 or mouse 2 is pressed
@@ -31,18 +31,16 @@ public class GAME_RubikInputHandler : MonoBehaviour
         //wait for input
 
         // input testing
-        if (!Output)
-        {
-            var InputIndex = 0;
-            for (int i = 1; i < Inputs.Count; i++)
-            {
-                if ()
-                {
+        //if (!Output)
+        //{
+        //    var InputIndex = 0;
+        //    for (int i = 1; i < Inputs.Count; i++)
+        //    {
+        //        if ()
+        //        {
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
     }
 }
-
-// side = (1-2-3-4-5-6)
