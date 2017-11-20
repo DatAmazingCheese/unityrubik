@@ -7,17 +7,47 @@ public class GAME_RubikInputHandler : MonoBehaviour
     public List<GameObject> Centers;
     public GAME_RubikSideTurn TurnHandler;
 
-    //bool One = Input.GetKey("space");
+    List<bool> Inputs = new List<bool>() { false, false, false, false, false, false};
 
-    List<bool> Inputs = new List<bool>() { false, false, false, false, false, false}; 
+    string GetKey(params KeyCode[] Keys)
+    {
+        bool pressed = false;
+        string KeyPressed = "";
 
-	void Start ()
+        foreach (var key in Keys)
+        {
+            if (Input.GetKey(key) & !pressed)
+            {
+                pressed = true;
+                KeyPressed = key.ToString();
+            }
+            else
+            {
+                pressed = false;
+            }
+        }
+
+        print(pressed);
+
+        if (pressed)
+        {
+            return KeyPressed;
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    void Start ()
     {
        
 	}
 	
 	void Update ()
     {
+        print(GetKey(KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5));
+
         //psuedo code begins here, beware weary traveller
 
         //side = 1 of 6 inputs, only 1 of 6. Never 2
